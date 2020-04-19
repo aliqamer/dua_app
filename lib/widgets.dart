@@ -217,7 +217,7 @@ class DuaPlaceholderCard extends StatelessWidget {
                 ),
             ),
           ),
-          SizedBox(height: 6.0,),
+          SizedBox(height: 1.0,),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Text(
@@ -228,7 +228,7 @@ class DuaPlaceholderCard extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 6.0,),
+          SizedBox(height: 1.0,),
           Padding(
             padding: const EdgeInsets.all(17.0),
             child: Text(
@@ -239,9 +239,9 @@ class DuaPlaceholderCard extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 6.0,),
+//          SizedBox(height: 6.0,),
           Padding(
-            padding: const EdgeInsets.all(17.0),
+            padding: const EdgeInsets.all(5.0),
             child: Text(
               getDua().chapter,
               style: TextStyle(

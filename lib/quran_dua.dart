@@ -28,7 +28,7 @@ class QuranDua extends Dua {
     DuaObject(
         "رَبَّنَا لَا تُزِغۡ قُلُوبَنَا بَعۡدَ إِذۡ هَدَيۡتَنَا وَهَبۡ لَنَا مِن لَّدُنكَ رَحۡمَةً‌ۚ إِنَّكَ أَنتَ ٱلۡوَهَّابُ",
         "اے رب ہمارے! جب تو ہم کو ہدایت کر چکا تو ہمارے دلوں کا نہ پھیر اور اپنے ہاں سے ہمیں رحمت عطافرما بے شک تو بہت زیادہ دینے والا ہے",
-        "Our Lord, let not our hearts deviate after You have guided us and grant us from Yourself mercy. Indeed, You are the Bestower", "3 Family Of Imran | سُوۡرَةُ آل عِمرَان", "8"),
+        "Our Lord, let not our hearts deviate after You have guided us and grant us from Yourself mercy. Indeed, You are the Bestower", "3 Family Of Imran | سُوۡرَةُ آل عِمرَان", "v8"),
     DuaObject(
         "رَبَّنَآ إِنَّنَآ ءَامَنَّا فَٱغۡفِرۡ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ ٱلنَّارَِ",
         "اے رب ہمارے! ہم ایمان لائے ہیں سو ہمیں ہمارے گناہ بخش دے اور ہمیں دوزخ کے عذاب سے بچا لے",

@@ -200,6 +200,10 @@ class DuaPlaceholderCard extends StatelessWidget {
     return duaList[index];
   }
 
+  int getLength(duaType) {
+    return duaFactory.getDuaByType(duaType).length;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(

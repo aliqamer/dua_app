@@ -15,6 +15,7 @@ class QuranDuaTab extends StatelessWidget {
   final Color color;
 
   Widget _buildBody() {
+    DuaPlaceholderCard duaPlaceholderCard = DuaPlaceholderCard();
     return SafeArea(
       bottom: false,
       left: false,
@@ -28,7 +29,7 @@ class QuranDuaTab extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: duaPlaceholderCard.getLength(duaType),
               itemBuilder: (context, i) {
                 if(i != null) {
                   if (i == 0) {

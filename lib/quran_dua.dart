@@ -1,9 +1,13 @@
 
+import 'dart:collection';
+
 import 'package:dua/dua.dart';
 import 'package:dua/dua_object.dart';
 
 class QuranDua extends Dua {
 
+  Map<String, List<int>> _categoriesMap = HashMap();
+  List<String> _categories = [];
   List<DuaObject> _duaList = [
     DuaObject(
         "أَعُوذُ بِٱللَّهِ أَنۡ أَكُونَ مِنَ ٱلۡجَـٰهِلِينَ",
@@ -154,5 +158,35 @@ class QuranDua extends Dua {
 
   List<DuaObject> getDuaList() {
     return _duaList;
+  }
+
+  Map<String, List<int>> getCategoriesMap() {
+    print("category: "+_categoriesMap.toString());
+    if(_categoriesMap.isEmpty) {
+      print('inside if');
+      for(int i=0; i<_duaList.length;i++) {
+          DuaObject object = _duaList[i];
+          if(_categoriesMap.containsKey(object.only_chapter)){
+            var list = _categoriesMap[object.only_chapter];
+            list.add(i);
+            _categoriesMap[object.only_chapter] = list;
+          }else {
+            print('new object '+object.only_chapter);
+            // ignore: unnecessary_statements
+//            var myList = [i];
+            _categoriesMap[object.only_chapter] = [i];
+            _categories.add(object.only_chapter);
+          }
+      }
+    }
+    print('final: '+_categoriesMap.toString());
+    return _categoriesMap;
+  }
+
+  List<String> getCategories() {
+    if(_categories.isEmpty) {
+      getCategoriesMap();
+    }
+    return _categories;
   }
 }

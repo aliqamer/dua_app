@@ -8,13 +8,14 @@ import 'widgets.dart';
 /// On Android, this page sits at the top of your app. On iOS, this page is on
 /// top of the songs tab's content but is below the tab bar itself.
 class QuranDuaTab extends StatelessWidget {
-  const QuranDuaTab({this.id, this.duaType, this.color});
+  const QuranDuaTab({this.id, this.duaType, this.color, this.indexList});
 
   final int id;
   final String duaType;
   final Color color;
+  final List<int> indexList;
 
-  Widget _buildBody() {
+  Widget buildBody() {
     DuaPlaceholderCard duaPlaceholderCard = DuaPlaceholderCard();
     return SafeArea(
       bottom: false,
@@ -29,24 +30,18 @@ class QuranDuaTab extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: duaPlaceholderCard.getLength(duaType),
+              itemCount: indexList == null ? duaPlaceholderCard.getLength(duaType) : indexList.length,
+              // ignore: missing_return
               itemBuilder: (context, i) {
                 if(i != null) {
-                  if (i == 0) {
-                    return Padding(
-                      padding:
-                      const EdgeInsets.only(left: 15, top: 16, bottom: 8),
-//                    child: Text(
-//                      'You might also like:',
-//                      style: TextStyle(
-//                        fontSize: 16,
-//                        fontWeight: FontWeight.w500,
-//                      ),
-//                    ),
-                    );
-                  }
-                  // Just a bunch of boxes that simulates loading song choices.
-                  return DuaPlaceholderCard(duaType: duaType, index: i);
+//                  if (i == 0) {
+//                    return Padding(
+//                      padding:
+//                      const EdgeInsets.only(left: 15, top: 16, bottom: 8),
+//                    );
+//                  }
+                  // Just a bunch of boxes.
+                  return DuaPlaceholderCard(duaType: duaType, index: indexList == null ? i : indexList[i]);
                 }
               },
             ),
@@ -63,7 +58,7 @@ class QuranDuaTab extends StatelessWidget {
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(duaType)),
-      body: _buildBody(),
+      body: buildBody(),
     );
   }
 
@@ -73,7 +68,7 @@ class QuranDuaTab extends StatelessWidget {
         middle: Text(duaType),
         previousPageTitle: 'Songs',
       ),
-      child: _buildBody(),
+      child: buildBody(),
     );
   }
 

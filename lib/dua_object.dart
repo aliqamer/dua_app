@@ -25,5 +25,6 @@ class DuaObject {
 
   String get arabic => _arabic;
 
+  String get only_chapter => _chapter;
 
 }

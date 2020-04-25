@@ -1,3 +1,4 @@
+import 'package:dua/page_router.dart';
 import 'package:dua/quran_dua_tab.dart';
 import 'package:dua/widgets.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,7 +19,7 @@ class HomeTab extends StatefulWidget {
 }
 
 class _HomeTabState extends State<HomeTab> {
-  static const _itemsLength = 2;
+  static const _itemsLength = 3;
 
   final _androidRefreshKey = GlobalKey<RefreshIndicatorState>();
 
@@ -33,9 +34,9 @@ class _HomeTabState extends State<HomeTab> {
 
   void _setData() {
     colors = [
-      Colors.teal, Colors.teal
+      Colors.teal, Colors.teal, Colors.teal
     ];
-    duaFromList = ["Quran", "Hadeeth"];
+    duaFromList = ["Quran", "Hadeeth", "QuranCategory"];
   }
 
   Future<void> _refreshData() {
@@ -66,7 +67,7 @@ class _HomeTabState extends State<HomeTab> {
           heroAnimation: AlwaysStoppedAnimation(0),
           onPressed: () => Navigator.of(context).push<void>(
             MaterialPageRoute(
-              builder: (context) => QuranDuaTab(
+              builder: (context) => PageRouter(
                 id: index,
                 duaType: duaFromList[index],
                 color: color,

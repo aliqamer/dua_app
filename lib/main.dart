@@ -129,29 +129,29 @@ class _AndroidDrawer extends StatelessWidget {
 //                  context, MaterialPageRoute(builder: (context) => NewsTab()));
 //            },
 //          ),
-          ListTile(
-            leading: ProfileTab.androidIcon,
-            title: Text(ProfileTab.title),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push<void>(context,
-                  MaterialPageRoute(builder: (context) => ProfileTab()));
-            },
-          ),
+//          ListTile(
+//            leading: ProfileTab.androidIcon,
+//            title: Text(ProfileTab.title),
+//            onTap: () {
+//              Navigator.pop(context);
+//              Navigator.push<void>(context,
+//                  MaterialPageRoute(builder: (context) => ProfileTab()));
+//            },
+//          ),
           // Long drawer contents are often segmented.
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Divider(),
-          ),
-          ListTile(
-            leading: SettingsTab.androidIcon,
-            title: Text(SettingsTab.title),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push<void>(context,
-                  MaterialPageRoute(builder: (context) => SettingsTab()));
-            },
-          ),
+//          Padding(
+//            padding: const EdgeInsets.symmetric(horizontal: 16),
+//            child: Divider(),
+//          ),
+//          ListTile(
+//            leading: SettingsTab.androidIcon,
+//            title: Text(SettingsTab.title),
+//            onTap: () {
+//              Navigator.pop(context);
+//              Navigator.push<void>(context,
+//                  MaterialPageRoute(builder: (context) => SettingsTab()));
+//            },
+//          ),
         ],
       ),
     );

@@ -161,9 +161,7 @@ class QuranDua extends Dua {
   }
 
   Map<String, List<int>> getCategoriesMap() {
-    print("category: "+_categoriesMap.toString());
     if(_categoriesMap.isEmpty) {
-      print('inside if');
       for(int i=0; i<_duaList.length;i++) {
           DuaObject object = _duaList[i];
           if(_categoriesMap.containsKey(object.only_chapter)){
@@ -171,15 +169,12 @@ class QuranDua extends Dua {
             list.add(i);
             _categoriesMap[object.only_chapter] = list;
           }else {
-            print('new object '+object.only_chapter);
             // ignore: unnecessary_statements
-//            var myList = [i];
             _categoriesMap[object.only_chapter] = [i];
             _categories.add(object.only_chapter);
           }
       }
     }
-    print('final: '+_categoriesMap.toString());
     return _categoriesMap;
   }
 

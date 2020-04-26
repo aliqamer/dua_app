@@ -189,8 +189,9 @@ class HeroAnimatingCard extends StatelessWidget {
 /// use on both iOS and Android as part of their brand's unique design.
 class DuaPlaceholderCard extends StatelessWidget {
 
-  DuaPlaceholderCard({this.duaType, this.index});
+  DuaPlaceholderCard({this.duaType,this.duaTitle, this.index});
   final String duaType;
+  final String duaTitle;
   final int index;
   DuaFactory duaFactory = DuaFactory();
   DuaObject duaObject = null;

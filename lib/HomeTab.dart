@@ -25,6 +25,7 @@ class _HomeTabState extends State<HomeTab> {
 
   List<MaterialColor> colors;
   List<String> duaFromList;
+  List<String> duaFromListTitle;
 
   @override
   void initState() {
@@ -37,6 +38,7 @@ class _HomeTabState extends State<HomeTab> {
       Colors.teal, Colors.teal, Colors.teal
     ];
     duaFromList = ["Quran", "Hadeeth", "QuranCategory"];
+    duaFromListTitle = ["Dua In Quran", "Dua In Hadeeth", "Dua With Quran Chapter"];
   }
 
   Future<void> _refreshData() {
@@ -62,7 +64,7 @@ class _HomeTabState extends State<HomeTab> {
       child: Hero(
         tag: index,
         child: HeroAnimatingCard.HomeAnimatedCard(
-          type: duaFromList[index],
+          type: duaFromListTitle[index],
           color: color,
           heroAnimation: AlwaysStoppedAnimation(0),
           onPressed: () => Navigator.of(context).push<void>(
@@ -70,6 +72,7 @@ class _HomeTabState extends State<HomeTab> {
               builder: (context) => PageRouter(
                 id: index,
                 duaType: duaFromList[index],
+                duaTitle: duaFromListTitle[index],
                 color: color,
               ),
             ),
@@ -112,17 +115,17 @@ class _HomeTabState extends State<HomeTab> {
       appBar: AppBar(
         title: Text(HomeTab.title),
         actions: [
-          IconButton(
-            icon: Icon(Icons.refresh),
-            onPressed: () async => await _androidRefreshKey.currentState.show(),
-          ),
-          IconButton(
-            icon: Icon(Icons.shuffle),
-            onPressed: _togglePlatform,
-          ),
+//          IconButton(
+//            icon: Icon(Icons.refresh),
+//            onPressed: () async => await _androidRefreshKey.currentState.show(),
+//          ),
+//          IconButton(
+//            icon: Icon(Icons.shuffle),
+//            onPressed: _togglePlatform,
+//          ),
         ],
       ),
-      drawer: widget.androidDrawer,
+//      drawer: widget.androidDrawer,
       body: RefreshIndicator(
         key: _androidRefreshKey,
         onRefresh: _refreshData,

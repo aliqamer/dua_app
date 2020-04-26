@@ -8,10 +8,11 @@ import 'widgets.dart';
 /// On Android, this page sits at the top of your app. On iOS, this page is on
 /// top of the songs tab's content but is below the tab bar itself.
 class QuranDuaTab extends StatelessWidget {
-  const QuranDuaTab({this.id, this.duaType, this.color, this.indexList});
+  const QuranDuaTab({this.id, this.duaType,this.duaTitle, this.color, this.indexList});
 
   final int id;
   final String duaType;
+  final String duaTitle;
   final Color color;
   final List<int> indexList;
 
@@ -34,14 +35,8 @@ class QuranDuaTab extends StatelessWidget {
               // ignore: missing_return
               itemBuilder: (context, i) {
                 if(i != null) {
-//                  if (i == 0) {
-//                    return Padding(
-//                      padding:
-//                      const EdgeInsets.only(left: 15, top: 16, bottom: 8),
-//                    );
-//                  }
-                  // Just a bunch of boxes.
-                  return DuaPlaceholderCard(duaType: duaType, index: indexList == null ? i : indexList[i]);
+                 // Just a bunch of boxes.
+                  return DuaPlaceholderCard(duaType: duaType,duaTitle: duaTitle, index: indexList == null ? i : indexList[i]);
                 }
               },
             ),
@@ -57,7 +52,7 @@ class QuranDuaTab extends StatelessWidget {
 
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(duaType)),
+      appBar: AppBar(title: Text(duaTitle)),
       body: buildBody(),
     );
   }
@@ -65,7 +60,7 @@ class QuranDuaTab extends StatelessWidget {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text(duaType),
+        middle: Text(duaTitle),
         previousPageTitle: 'Songs',
       ),
       child: buildBody(),

@@ -1,4 +1,6 @@
+import 'package:dua/HadithDua.dart';
 import 'package:dua/dua_object.dart';
+import 'package:dua/hadith_dua_tab.dart';
 import 'package:dua/quran_dua.dart';
 import 'package:dua/quran_dua_tab.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,12 +8,8 @@ import 'package:flutter/material.dart';
 
 import 'widgets.dart';
 
-/// Page shown when a card in the songs tab is tapped.
-///
-/// On Android, this page sits at the top of your app. On iOS, this page is on
-/// top of the songs tab's content but is below the tab bar itself.
-class QuranCategory {
-  const QuranCategory({this.id, this.duaType, this.duaTitle});
+class HadithCategory {
+  const HadithCategory({this.id, this.duaType, this.duaTitle});
 
   final int id;
   final String duaType;
@@ -19,10 +17,8 @@ class QuranCategory {
 
   Widget buildBody() {
     DuaPlaceholderCard duaPlaceholderCard = DuaPlaceholderCard();
-    QuranDua quranDua = QuranDua();
-    var duas = quranDua.getDuaList();
-    Map<String, List<int>> categoriesMap = quranDua.getCategoriesMap();
-    List<String> categories = quranDua.getCategories();
+    HadithDua hadithDua = HadithDua();
+    List<String> categories = hadithDua.getCategories();
 
     return SafeArea(
       bottom: false,
@@ -48,12 +44,11 @@ class QuranCategory {
                         onTap: () {
                           Navigator.of(context).push<void>(
                             MaterialPageRoute(
-                              builder: (context) => QuranDuaTab(
+                              builder: (context) => HadithDuaTab(
                                 id: id,
-                                duaType: 'Quran',
-                                duaTitle: duaTitle,
-                                color: Colors.teal,
-                                indexList: categoriesMap[categories[index]],
+                                duaType: 'Hadith',
+                                duaTitle: categories[index],
+                                category: categories[index],
                               ),
                             ),
                           );

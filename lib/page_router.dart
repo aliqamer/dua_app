@@ -1,3 +1,4 @@
+import 'package:dua/hadith_categories.dart';
 import 'package:dua/quran_categories.dart';
 import 'package:dua/quran_dua_tab.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,10 +6,11 @@ import 'package:flutter/material.dart';
 import 'widgets.dart';
 
 class PageRouter extends StatelessWidget {
-  const PageRouter({this.id, this.duaType, this.color});
+  const PageRouter({this.id, this.duaType,this.duaTitle, this.color});
 
   final int id;
   final String duaType;
+  final String duaTitle;
   final Color color;
 
   Widget _buildBody() {
@@ -17,6 +19,7 @@ class PageRouter extends StatelessWidget {
       var quranDuaTab = QuranDuaTab(
         id: id,
         duaType: duaType,
+        duaTitle: duaTitle,
         color: color,
         indexList: null,
       );
@@ -26,8 +29,11 @@ class PageRouter extends StatelessWidget {
     } else if(duaType == "QuranCategory") {
       print('pagerouter calling quran category');
 
-      var quranCategory = QuranCategory(id: id, duaType: duaType);
+      var quranCategory = QuranCategory(id: id, duaType: duaType, duaTitle: duaTitle);
       return quranCategory.buildBody();
+    } else if(duaType == "Hadeeth") {
+      var hadithCategory = HadithCategory(id: id, duaType: duaType, duaTitle: duaTitle);
+      return hadithCategory.buildBody();
     }
   }
 
@@ -37,7 +43,7 @@ class PageRouter extends StatelessWidget {
 
   Widget _buildAndroid(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(duaType)),
+      appBar: AppBar(title: Text(duaTitle)),
       body: _buildBody(),
     );
   }
@@ -45,8 +51,8 @@ class PageRouter extends StatelessWidget {
   Widget _buildIos(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text(duaType),
-        previousPageTitle: 'Songs',
+        middle: Text(duaTitle),
+        previousPageTitle: duaTitle,
       ),
       child: _buildBody(),
     );

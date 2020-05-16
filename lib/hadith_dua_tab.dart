@@ -60,7 +60,7 @@ class HadithDuaTab extends StatelessWidget {
                         child:Column(
                           children: <Widget>[
                             Padding(
-                              padding: const EdgeInsets.all(15.0),
+                              padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 40.0),
                               child: Text(
                                 hadithListByCategory[index].arabic,
                                 style: TextStyle(
@@ -71,7 +71,7 @@ class HadithDuaTab extends StatelessWidget {
                             ),
                             SizedBox(height: 1.0,),
                             Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: const EdgeInsets.all(15.0),
                               child: Text(
                                 hadithListByCategory[index].english,
                                 style: TextStyle(
@@ -82,7 +82,7 @@ class HadithDuaTab extends StatelessWidget {
                             ),
                             SizedBox(height: 1.0,),
                             Padding(
-                              padding: const EdgeInsets.all(17.0),
+                              padding: const EdgeInsets.all(20.0),
                               child: Text(
                                 hadithListByCategory[index].urdu,
                                 style: TextStyle(

@@ -213,7 +213,7 @@ class DuaPlaceholderCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.symmetric(vertical: 25.0, horizontal: 30.0),
             child: Text(
                 getDua().arabic,
                 style: TextStyle(

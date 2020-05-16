@@ -66,6 +66,16 @@ class HadithCategory {
                                 ),
                               ),
                             ),
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Text(
+                                hadithDua.getUrduCategory(categories[index]),
+                                style: TextStyle(
+                                  fontSize: 20.0,
+//                color: Colors.black26,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),

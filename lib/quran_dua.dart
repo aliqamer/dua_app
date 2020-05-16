@@ -39,7 +39,7 @@ class QuranDua extends Dua {
         "Our Lord, indeed we have believed, so forgive us our sins and protect us from the punishment of the Fire", "3 Family Of Imran | سُوۡرَةُ آل عِمرَان", "v16"),
     DuaObject(
         "رَبَّنَآ ءَامَنَّا بِمَآ أَنزَلۡتَ وَٱتَّبَعۡنَا ٱلرَّسُولَ فَٱڪۡتُبۡنَا مَعَ ٱلشَّـٰهِدِينََ",
-        "ااے رب ہمارے! ہم اس چیز پر ایمان لائے جو تو نے نازل کی اور ہم رسول کے تابعدار ہوئے سو تو ہمیں گواہی دینے والوں میں لکھ لے",
+        "اے رب ہمارے! ہم اس چیز پر ایمان لائے جو تو نے نازل کی اور ہم رسول کے تابعدار ہوئے سو تو ہمیں گواہی دینے والوں میں لکھ لے",
         "Our Lord, we have believed in what You revealed and have followed the messenger Jesus, so register us among the witnesses [to truth]", "3 Family Of Imran | سُوۡرَةُ آل عِمرَان", "v53"),
     DuaObject(
         "رَبَّنَا ٱغۡفِرۡ لَنَا ذُنُوبَنَا وَإِسۡرَافَنَا فِىٓ أَمۡرِنَا وَثَبِّتۡ أَقۡدَامَنَا وَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡڪَـٰفِرِينَ",

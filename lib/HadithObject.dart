@@ -4,18 +4,20 @@ class HadithObject {
   String _arabic;
   String _urdu;
   String _english;
-  String _category;
+  String _categorye;
+  String _categoryu;
   List<HadithDetail> _hadithDetail;
 
   //list of categories in arabic, urdu and english
   //each category will have list of hadiths
   //each hadith will have details with reference
 
-  HadithObject(String c, String a, String u, String e, List<HadithDetail> hadithDetail) {
+  HadithObject(String c,String cu, String a, String u, String e, List<HadithDetail> hadithDetail) {
     _arabic = a;
     _urdu = u;
     _english = e;
-    _category = c;
+    _categorye = c;
+    _categoryu = cu;
     _hadithDetail = hadithDetail;
   }
 //String b, String ch, String v, String _hadith_a, String _hadith_u, String _hadith_e
@@ -26,10 +28,11 @@ class HadithObject {
 
   String get arabic => _arabic;
 
-  String get category => _category;
+  String get categorye => _categorye;
 
   List<HadithDetail> get hadithDetail => _hadithDetail;
 
+  String get categoryu => _categoryu;
 
 }
 
